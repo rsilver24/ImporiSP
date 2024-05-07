@@ -12,15 +12,15 @@ public class SceneController : MonoBehaviour
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		} else{
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 
 	public void nextBoss(){
-		SceneManager.LoadSceneAsync(1);
+		SceneManager.LoadScene(1);
 	}
 	
 	public void loadBoss(string sceneName){
-		SceneManager.LoadSceneAsync(sceneName);
+		SceneManager.LoadScene(sceneName);
 	}
 }

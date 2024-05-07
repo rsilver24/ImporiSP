@@ -42,37 +42,42 @@ public class Dice : MonoBehaviour{
 
 		GameControl.diceSideThrown = randomDiceSide + 1;
 
-		if (whosTurn == 1){ //NEW
-			wpIndex = player1.GetComponent<FollowThePath>().waypointIndex; //NEW
-		} // NEW
-		else if (whosTurn == -1){ //NEW
-			wpIndex = player2.GetComponent<FollowThePath>().waypointIndex; //NEW
-		} // NEW
+		if (whosTurn == 1){ 
+			wpIndex = player1.GetComponent<FollowThePath>().waypointIndex;
+		} 
+		else if (whosTurn == -1){
+			wpIndex = player2.GetComponent<FollowThePath>().waypointIndex; 
+		} 
 
-		if (6 <= wpIndex && wpIndex <= 11){ //NEW
-			if (GameControl.diceSideThrown > 12 - wpIndex){ //NEW
-				GameControl.diceSideThrown = 12 - wpIndex; //NEW
-			} //NEW
-		} //NEW
+		if (6 <= wpIndex && wpIndex <= 11){ 
+			if (GameControl.diceSideThrown > 12 - wpIndex){ 
+				GameControl.diceSideThrown = 12 - wpIndex; 
+			} 
+		} 
 
-		else if (17 <= wpIndex && wpIndex <= 22){ //NEW
-			if (GameControl.diceSideThrown > 23 - wpIndex){ //NEW
-				GameControl.diceSideThrown = 23 - wpIndex; //NEW
-			} //NEW
-		} //NEW
+		else if (17 <= wpIndex && wpIndex <= 22){ 
+			if (GameControl.diceSideThrown > 23 - wpIndex){ 
+				GameControl.diceSideThrown = 23 - wpIndex; 
+			} 
+		} 
 
-		else if (28 <= wpIndex && wpIndex <= 33){ //NEW
-			if (GameControl.diceSideThrown > 34 - wpIndex){ //NEW
-				GameControl.diceSideThrown = 34 - wpIndex; //NEW
-			} //NEW
-		} //NEW
+		else if (28 <= wpIndex && wpIndex <= 33){ 
+			if (GameControl.diceSideThrown > 34 - wpIndex){ 
+				GameControl.diceSideThrown = 34 - wpIndex; 
+			} 
+		} 
 
-		else if (39 <= wpIndex && wpIndex <= 44){ //NEW
-			if (GameControl.diceSideThrown > 45 - wpIndex){ //NEW
-				GameControl.diceSideThrown = 45 - wpIndex; //NEW
-			} //NEW
-		} //NEW
+		else if (39 <= wpIndex && wpIndex <= 44){ 
+			if (GameControl.diceSideThrown > 45 - wpIndex){ 
+				GameControl.diceSideThrown = 45 - wpIndex; 
+			} 
+		} 
 
+		if (wpIndex == 11)
+		{
+			//nothing yet
+		}
+		
 		if (whosTurn == 1)
 		{
 			GameControl.MovePlayer(1);

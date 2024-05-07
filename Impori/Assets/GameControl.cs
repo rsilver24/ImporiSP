@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class GameControl : MonoBehaviour
     public static int player2StartWaypoint = 0;
 
     public static bool gameOver = false;
+
+    public static bool done = false;
     
     // Start is called before the first frame update
     void Start()
     {
-		Player1WinsText = GameObject.Find("Player1WinsText"); //here
-		Player2WinsText = GameObject.Find("Player2WinsText"); //here
+		Player1WinsText = GameObject.Find("Player1WinsText");
+		Player2WinsText = GameObject.Find("Player2WinsText");
         WhoWinsText = GameObject.Find("WhoWinsText");
         Player1MoveText = GameObject.Find("Player1MoveText");
         Player2MoveText = GameObject.Find("Player2MoveText");
@@ -33,8 +36,8 @@ public class GameControl : MonoBehaviour
         player1.GetComponent<FollowThePath>().moveAllowed = false;
         player2.GetComponent<FollowThePath>().moveAllowed = false;
 
-		Player1WinsText.gameObject.SetActive(false); //here
-		Player2WinsText.gameObject.SetActive(false); //here
+		Player1WinsText.gameObject.SetActive(false);
+		Player2WinsText.gameObject.SetActive(false);
         WhoWinsText.gameObject.SetActive(false);
         Player1MoveText.gameObject.SetActive(true);
         Player2MoveText.gameObject.SetActive(false);
@@ -49,8 +52,8 @@ public class GameControl : MonoBehaviour
 				Player1MoveText.gameObject.SetActive(false);
 				Player2MoveText.gameObject.SetActive(true);
 
-				if (Dice.wpIndex == 11){
-					SceneController.instance.nextBoss();
+				if (player1.GetComponent<FollowThePath>().waypointIndex == 12){
+					SceneManager.LoadScene(1);
 				}
 
 				player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
@@ -61,6 +64,11 @@ public class GameControl : MonoBehaviour
 			player2.GetComponent<FollowThePath>().moveAllowed = false;
 			Player2MoveText.gameObject.SetActive(false);
 			Player1MoveText.gameObject.SetActive(true);
+			
+			if (player2.GetComponent<FollowThePath>().waypointIndex == 12){
+				SceneManager.LoadScene(1);
+			}
+			
 			player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;
 		}
 
@@ -69,16 +77,16 @@ public class GameControl : MonoBehaviour
 				WhoWinsText.gameObject.SetActive(true);
 				Player1MoveText.gameObject.SetActive(false);
 				Player2MoveText.gameObject.SetActive(false);
-				Player1WinsText.gameObject.SetActive(true); //here
+				Player1WinsText.gameObject.SetActive(true); 
 				WhoWinsText.GetComponent<Text>().text = "Player 1 Wins";
-				gameOver = true; //here
+				gameOver = true;
 			}
 		if (player2.GetComponent<FollowThePath>().waypointIndex == player2.GetComponent<FollowThePath>().waypoints.Length)
 			{
 				WhoWinsText.gameObject.SetActive(true);
 				Player1MoveText.gameObject.SetActive(false);
 				Player2MoveText.gameObject.SetActive(false);
-				Player2WinsText.gameObject.SetActive(true); //here
+				Player2WinsText.gameObject.SetActive(true);
 				WhoWinsText.GetComponent<Text>().text = "Player 2 Wins";
 				gameOver = true;
 			}
