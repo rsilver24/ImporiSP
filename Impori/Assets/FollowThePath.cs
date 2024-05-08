@@ -10,8 +10,7 @@ public class FollowThePath : MonoBehaviour
 
     [SerializeField]
     private float moveSpeed = 1f;
-
-    [HideInInspector]
+    
     public int waypointIndex = 0;
 
     public bool moveAllowed = false;
@@ -19,7 +18,24 @@ public class FollowThePath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = waypoints[waypointIndex].transform.position;
+        transform.position = waypoints[0].transform.position;
+        if (SceneController.counter == 1)
+        {
+            transform.position = waypoints[12].transform.position;
+            waypointIndex = 12;
+        } else if (SceneController.counter == 2)
+        {
+            transform.position = waypoints[23].transform.position;
+            waypointIndex = 23;
+        } else if (SceneController.counter == 3)
+        {
+            transform.position = waypoints[34].transform.position;
+            waypointIndex = 34;
+        } else if (SceneController.counter == 4)
+        {
+            transform.position = waypoints[45].transform.position;
+            waypointIndex = 45;
+        }
     }
 
     // Update is called once per frame

@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
 {
-    [SerializeField] private string newGameLevel = "MainGame";
+    //[SerializeField] private string newGameLevel = "MainGame";
 
     public void NewGameButton()
     {
+		SceneController.counter += 1;
         SceneManager.LoadScene(0);
     }
 }

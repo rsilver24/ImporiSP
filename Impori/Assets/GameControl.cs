@@ -53,6 +53,32 @@ public class GameControl : MonoBehaviour
 				Player2MoveText.gameObject.SetActive(true);
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 12){
+					//DontDestroyOnLoad(player1);
+					//DontDestroyOnLoad(player2);
+					SceneManager.LoadScene(1);
+				}
+
+				if (player1.GetComponent<FollowThePath>().waypointIndex == 23){
+					//DontDestroyOnLoad(player1);
+					//DontDestroyOnLoad(player2);
+					SceneManager.LoadScene(1);
+				}
+
+				if (player1.GetComponent<FollowThePath>().waypointIndex == 34){
+					//DontDestroyOnLoad(player1);
+					//DontDestroyOnLoad(player2);
+					SceneManager.LoadScene(1);
+				}
+
+				if (player1.GetComponent<FollowThePath>().waypointIndex == 45){
+					//DontDestroyOnLoad(player1);
+					//DontDestroyOnLoad(player2);
+					SceneManager.LoadScene(1);
+				}
+
+				if (player1.GetComponent<FollowThePath>().waypointIndex == 56){
+					//DontDestroyOnLoad(player1);
+					//DontDestroyOnLoad(player2);
 					SceneManager.LoadScene(1);
 				}
 
@@ -66,6 +92,32 @@ public class GameControl : MonoBehaviour
 			Player1MoveText.gameObject.SetActive(true);
 			
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 12){
+				//DontDestroyOnLoad(player1);
+				//DontDestroyOnLoad(player2);
+				SceneManager.LoadScene(1);
+			}
+
+			if (player2.GetComponent<FollowThePath>().waypointIndex == 23){
+				//DontDestroyOnLoad(player1);
+				//DontDestroyOnLoad(player2);
+				SceneManager.LoadScene(1);
+			}
+
+			if (player2.GetComponent<FollowThePath>().waypointIndex == 34){
+				//DontDestroyOnLoad(player1);
+				//DontDestroyOnLoad(player2);
+				SceneManager.LoadScene(1);
+			}
+
+			if (player2.GetComponent<FollowThePath>().waypointIndex == 45){
+				//DontDestroyOnLoad(player1);
+				//DontDestroyOnLoad(player2);
+				SceneManager.LoadScene(1);
+			}
+
+			if (player2.GetComponent<FollowThePath>().waypointIndex == 56){
+				//DontDestroyOnLoad(player1);
+				//DontDestroyOnLoad(player2);
 				SceneManager.LoadScene(1);
 			}
 			
