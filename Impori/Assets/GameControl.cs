@@ -11,7 +11,7 @@ public class GameControl : MonoBehaviour
     private static GameObject WhoWinsText, Player1MoveText, Player2MoveText, Player1WinsText, Player2WinsText;
 
 	//Added public instead of private
-    public static GameObject player1, player2;
+    public static GameObject player1, player2, DiceCard;
 
     public static int diceSideThrown = 0;
     public static int player1StartWaypoint = 0;
@@ -32,6 +32,7 @@ public class GameControl : MonoBehaviour
 
         player1 = GameObject.Find("player1");
         player2 = GameObject.Find("player2");
+		DiceCard = GameObject.Find("DiceCard");
 
         player1.GetComponent<FollowThePath>().moveAllowed = false;
         player2.GetComponent<FollowThePath>().moveAllowed = false;
@@ -53,32 +54,37 @@ public class GameControl : MonoBehaviour
 				Player2MoveText.gameObject.SetActive(true);
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 12){
-					//DontDestroyOnLoad(player1);
-					//DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(player1);
+					DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(DiceCard);
 					SceneManager.LoadScene(1);
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 23){
-					//DontDestroyOnLoad(player1);
-					//DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(player1);
+					DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(DiceCard);
 					SceneManager.LoadScene(1);
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 34){
-					//DontDestroyOnLoad(player1);
-					//DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(player1);
+					DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(DiceCard);
 					SceneManager.LoadScene(1);
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 45){
-					//DontDestroyOnLoad(player1);
-					//DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(player1);
+					DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(DiceCard);
 					SceneManager.LoadScene(1);
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 56){
-					//DontDestroyOnLoad(player1);
-					//DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(player1);
+					DontDestroyOnLoad(player2);
+					DontDestroyOnLoad(DiceCard);
 					SceneManager.LoadScene(1);
 				}
 
@@ -92,32 +98,37 @@ public class GameControl : MonoBehaviour
 			Player1MoveText.gameObject.SetActive(true);
 			
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 12){
-				//DontDestroyOnLoad(player1);
-				//DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(player1);
+				DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(DiceCard);
 				SceneManager.LoadScene(1);
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 23){
-				//DontDestroyOnLoad(player1);
-				//DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(player1);
+				DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(DiceCard);
 				SceneManager.LoadScene(1);
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 34){
-				//DontDestroyOnLoad(player1);
-				//DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(player1);
+				DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(DiceCard);
 				SceneManager.LoadScene(1);
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 45){
-				//DontDestroyOnLoad(player1);
-				//DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(player1);
+				DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(DiceCard);
 				SceneManager.LoadScene(1);
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 56){
-				//DontDestroyOnLoad(player1);
-				//DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(player1);
+				DontDestroyOnLoad(player2);
+				DontDestroyOnLoad(DiceCard);
 				SceneManager.LoadScene(1);
 			}
 			

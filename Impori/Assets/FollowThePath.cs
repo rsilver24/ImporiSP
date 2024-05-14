@@ -18,24 +18,11 @@ public class FollowThePath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = waypoints[0].transform.position;
-        if (SceneController.counter == 1)
+        if (SceneController.counter > 0)
         {
-            transform.position = waypoints[12].transform.position;
-            waypointIndex = 12;
-        } else if (SceneController.counter == 2)
-        {
-            transform.position = waypoints[23].transform.position;
-            waypointIndex = 23;
-        } else if (SceneController.counter == 3)
-        {
-            transform.position = waypoints[34].transform.position;
-            waypointIndex = 34;
-        } else if (SceneController.counter == 4)
-        {
-            transform.position = waypoints[45].transform.position;
-            waypointIndex = 45;
+            Destroy(gameObject);
         }
+        transform.position = waypoints[waypointIndex].transform.position;
     }
 
     // Update is called once per frame

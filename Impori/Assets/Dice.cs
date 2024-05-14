@@ -11,16 +11,20 @@ public class Dice : MonoBehaviour{
 	private int whosTurn = 1;
 	private bool coroutineAllowed = true;
 	public static int wpIndex;
-	public static GameObject player1, player2; //NEW
+	public static GameObject player1, player2;
 
     // Start is called before the first frame update
     private void Start()
     {
+		if (SceneController.counter > 0)
+        {
+            Destroy(gameObject);
+        }
         rend = GetComponent<SpriteRenderer>();
 		diceSides = Resources.LoadAll<Sprite>("DiceSides/");
 		rend.sprite = diceSides[5];
-		player1 = GameObject.Find("player1"); //NEW
-    	player2 = GameObject.Find("player2"); //NEW
+		player1 = GameObject.Find("player1");
+    	player2 = GameObject.Find("player2");
     }
 
 	private void OnMouseDown()
