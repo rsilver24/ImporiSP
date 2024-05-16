@@ -14,6 +14,8 @@ public class FollowThePath : MonoBehaviour
     public int waypointIndex = 0;
 
     public bool moveAllowed = false;
+
+    public int localCounter = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,12 @@ public class FollowThePath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (localCounter == SceneController.counter - 1)
+        {
+            waypoints = waypoints;
+            localCounter += 1;
+        }
+        
         if (moveAllowed)
         {
             Move();
