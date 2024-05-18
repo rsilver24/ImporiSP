@@ -20,6 +20,9 @@ public class GameControl : MonoBehaviour
     public static bool gameOver = false;
 
     public static bool done = false;
+
+	public Camera MainCamera;
+    public Camera BossCam1;
     
     // Start is called before the first frame update
     void Start()
@@ -54,38 +57,23 @@ public class GameControl : MonoBehaviour
 				Player2MoveText.gameObject.SetActive(true);
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 12){
-					DontDestroyOnLoad(player1);
-					DontDestroyOnLoad(player2);
-					DontDestroyOnLoad(DiceCard);
-					SceneManager.LoadScene(1);
+					Cameras.state = 1;
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 23){
-					DontDestroyOnLoad(player1);
-					DontDestroyOnLoad(player2);
-					DontDestroyOnLoad(DiceCard);
-					SceneManager.LoadScene(1);
+					Cameras.state = 1;
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 34){
-					DontDestroyOnLoad(player1);
-					DontDestroyOnLoad(player2);
-					DontDestroyOnLoad(DiceCard);
-					SceneManager.LoadScene(1);
+					Cameras.state = 1;
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 45){
-					DontDestroyOnLoad(player1);
-					DontDestroyOnLoad(player2);
-					DontDestroyOnLoad(DiceCard);
-					SceneManager.LoadScene(1);
+					Cameras.state = 1;
 				}
 
 				if (player1.GetComponent<FollowThePath>().waypointIndex == 56){
-					DontDestroyOnLoad(player1);
-					DontDestroyOnLoad(player2);
-					DontDestroyOnLoad(DiceCard);
-					SceneManager.LoadScene(1);
+					Cameras.state = 1;
 				}
 
 				player1StartWaypoint = player1.GetComponent<FollowThePath>().waypointIndex - 1;
@@ -98,38 +86,23 @@ public class GameControl : MonoBehaviour
 			Player1MoveText.gameObject.SetActive(true);
 			
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 12){
-				DontDestroyOnLoad(player1);
-				DontDestroyOnLoad(player2);
-				DontDestroyOnLoad(DiceCard);
-				SceneManager.LoadScene(1);
+				Cameras.state = 1;
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 23){
-				DontDestroyOnLoad(player1);
-				DontDestroyOnLoad(player2);
-				DontDestroyOnLoad(DiceCard);
-				SceneManager.LoadScene(1);
+				Cameras.state = 1;
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 34){
-				DontDestroyOnLoad(player1);
-				DontDestroyOnLoad(player2);
-				DontDestroyOnLoad(DiceCard);
-				SceneManager.LoadScene(1);
+				Cameras.state = 1;
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 45){
-				DontDestroyOnLoad(player1);
-				DontDestroyOnLoad(player2);
-				DontDestroyOnLoad(DiceCard);
-				SceneManager.LoadScene(1);
+				Cameras.state = 1;
 			}
 
 			if (player2.GetComponent<FollowThePath>().waypointIndex == 56){
-				DontDestroyOnLoad(player1);
-				DontDestroyOnLoad(player2);
-				DontDestroyOnLoad(DiceCard);
-				SceneManager.LoadScene(1);
+				Cameras.state = 1;
 			}
 			
 			player2StartWaypoint = player2.GetComponent<FollowThePath>().waypointIndex - 1;

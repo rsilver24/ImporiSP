@@ -20,22 +20,12 @@ public class FollowThePath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneController.counter > 0)
-        {
-            Destroy(gameObject);
-        }
         transform.position = waypoints[waypointIndex].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (localCounter == SceneController.counter - 1)
-        {
-            waypoints = waypoints;
-            localCounter += 1;
-        }
-        
         if (moveAllowed)
         {
             Move();

@@ -10,6 +10,6 @@ public class ButtonUI : MonoBehaviour
     public void NewGameButton()
     {
 		SceneController.counter += 1;
-        SceneManager.LoadScene(0);
+        Cameras.state = 0;
     }
 }
