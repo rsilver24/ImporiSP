@@ -11,8 +11,10 @@ public class Cameras : MonoBehaviour
 
     void Start()
     {
-        MainCamera.SetActive(true);
+        MainCamera.SetActive(false);
+        BossCam1.SetActive(true);
         BossCam1.SetActive(false);
+        MainCamera.SetActive(true);
     }
     // Update is called once per frame
     void Update()

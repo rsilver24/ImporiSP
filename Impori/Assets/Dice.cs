@@ -8,7 +8,7 @@ public class Dice : MonoBehaviour{
 
 	private Sprite[] diceSides;
 	private SpriteRenderer rend;
-	private int whosTurn = 1;
+	public static int whosTurn = 1;
 	private bool coroutineAllowed = true;
 	public static int wpIndex;
 	public static GameObject player1, player2;
